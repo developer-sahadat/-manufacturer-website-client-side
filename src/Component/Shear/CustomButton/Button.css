@@ -1,0 +1,8 @@
+.custom_btn {
+  border-radius: 50px;
+  box-shadow: 2px 4px 5px #e5f6ff;
+  transition: all 0.5s;
+}
+.custom_btn:hover {
+  transform: scale(1.1);
+}

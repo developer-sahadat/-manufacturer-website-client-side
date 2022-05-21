@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import CustomButton1 from "../CustomButton/CustomButton1";
 import "./Header.css";
 
 const Header = () => {
@@ -11,35 +12,31 @@ const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="link" to="/about">
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink className="link " to="/pages">
-          Page
-        </NavLink>
-      </li>
-      <li>
-        <NavLink className="link" to="/login">
-          Login
-        </NavLink>
-      </li>
-      <li>
         <NavLink className="link" to="/services">
-          Home
+          Services
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink className="link" to="/my-portfolio">
+          My Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink className="link" to="/faq">
-          Home
+        <NavLink className="link" to="/blogs">
+          Blogs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="link " to="/contact">
+          Contact Us
         </NavLink>
       </li>
     </>
   );
   return (
     <div>
-      <div className="navbar bg-primary lg:px-10">
+      <div className="navbar  lg:px-10">
         <div className="navbar-start">
           <Link className="btn btn-ghost normal-case text-xl" to="\">
             Construction Tools
@@ -63,14 +60,19 @@ const Header = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-full"
             >
               {menuItems}
             </ul>
           </div>
         </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal p-0 lg:py-2">{menuItems}</ul>
+        </div>
+        <div className="navbar-end">
+          <Link className="link" to="/login">
+            <CustomButton1>Login</CustomButton1>
+          </Link>
         </div>
       </div>
     </div>

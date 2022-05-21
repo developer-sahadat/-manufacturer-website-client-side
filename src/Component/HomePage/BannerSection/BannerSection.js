@@ -29,7 +29,7 @@ const BannerSection = () => {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
