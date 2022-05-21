@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -39,11 +39,11 @@ const Header = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100 lg:px-10">
+      <div className="navbar bg-primary lg:px-10">
         <div className="navbar-start">
-          <a className="btn btn-ghost normal-case text-xl">
+          <Link className="btn btn-ghost normal-case text-xl" to="\">
             Construction Tools
-          </a>
+          </Link>
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
