@@ -1,9 +1,19 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../../FirebaseInit/FirebaseInit";
 import CustomButton1 from "../CustomButton/CustomButton1";
+import LoadingSpinner from "../LoadingSpinner";
 import "./Header.css";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   const menuItems = (
     <>
       <li>
@@ -32,6 +42,19 @@ const Header = () => {
           Contact Us
         </NavLink>
       </li>
+
+      {user ? (
+        <button
+          className="border border-primary px-10 py-2 custom_btn"
+          onClick={() => signOut(auth)}
+        >
+          Sign Out
+        </button>
+      ) : (
+        <Link className="link" to="/login">
+          <CustomButton1>Login</CustomButton1>
+        </Link>
+      )}
     </>
   );
   return (
@@ -41,7 +64,7 @@ const Header = () => {
           <Link className="btn btn-ghost normal-case text-xl" to="\">
             Construction Tools
           </Link>
-          <div className="dropdown">
+          <div className="dropdown dropdown-end">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +83,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-full"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow-2xl bg-base-100 rounded-box w-52"
             >
               {menuItems}
             </ul>
@@ -68,11 +91,6 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0 lg:py-2">{menuItems}</ul>
-        </div>
-        <div className="navbar-end">
-          <Link className="link" to="/login">
-            <CustomButton1>Login</CustomButton1>
-          </Link>
         </div>
       </div>
     </div>

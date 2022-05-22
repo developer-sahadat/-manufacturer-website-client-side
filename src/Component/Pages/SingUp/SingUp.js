@@ -36,7 +36,7 @@ const SingUp = () => {
 
   /** Sign Up error code start **/
   let errorMessage = "";
-  if (error || errorMessage || gError || fError) {
+  if (error || gError || fError) {
     errorMessage =
       error?.message ||
       updateError?.message ||

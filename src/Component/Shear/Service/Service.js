@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./service.css";
 
 const Service = ({ service }) => {
@@ -9,6 +10,7 @@ const Service = ({ service }) => {
     name,
     price,
     availableQuantity,
+    _id,
   } = service;
   return (
     <div className="w-72 lg:w-80 mx-auto cursor-pointer service_container text-center md:text-left">
@@ -28,9 +30,11 @@ const Service = ({ service }) => {
           Minimum Order Quantity: {minimumQuantity}
         </h6>
       </div>
-      <button className="mt-5 service_btn border border-primary px-10 py-2 custom_btn font-medium">
-        Buy Now
-      </button>
+      <Link to={`/purchase/${_id}`}>
+        <button className="mt-5 service_btn border border-primary px-10 py-2 custom_btn font-medium">
+          Buy Now
+        </button>
+      </Link>
     </div>
   );
 };
