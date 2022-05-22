@@ -5,8 +5,7 @@
     "description": "Pre-drills and Countersinks to the Correct Depth Every Time Independently Spun Stop Collars To Prevent Damage ",
     "minimumQuantity": "50",
     "availableQuantity": "1100",
-    "price": 50,
-    "_id": 1
+    "price": 50
   },
   {
     "image": "https://i.ibb.co/H2xJkFJ/Untitled-design-22-removebg-preview.png",
@@ -14,8 +13,7 @@
     "description": "Phasellus sed volutpat orci. Fusce eget lore mauris vehicula elementum gravida nec dui. Aenean aliquam varius ipsum, non ",
     "minimumQuantity": "30",
     "availableQuantity": "2100",
-    "price": 850,
-    "_id": 2
+    "price": 850
   },
   {
     "image": "https://i.ibb.co/N9W1qn3/Untitled-design-14-removebg-preview-3.png",
@@ -23,8 +21,7 @@
     "description": "Solid as a rock, the TEX's body is a single piece, which means fewer parts and better reliability. The TEX's low center  .",
     "minimumQuantity": "100",
     "availableQuantity": "950",
-    "price": 80,
-    "_id": 3
+    "price": 80
   },
   {
     "image": "https://i.ibb.co/L9nycfK/Untitled-design-23-removebg-preview.png",
@@ -32,8 +29,7 @@
     "description": "Let's get technical- this shirt has it all! Complete with UV protection and moisture wicking, Cool DRI",
     "minimumQuantity": "40",
     "availableQuantity": "800",
-    "price": 20,
-    "_id": 4
+    "price": 20
   },
   {
     "image": "https://i.ibb.co/w4709CM/Untitled-design-17-removebg-preview-1.png",
@@ -41,8 +37,7 @@
     "description": "This is very helpful for a contactor. Our AT will last for many days. Our products are sher ",
     "minimumQuantity": "100",
     "availableQuantity": "3100",
-    "price": 30,
-    "_id": 5
+    "price": 30
   },
   {
     "image": "https://i.ibb.co/xq3YSdJ/Untitled-design-20-removebg-preview.png",
@@ -50,7 +45,6 @@
     "description": "close-up view of construction tools as paint brush and roller safety helmet pipe wrench and putty  ",
     "minimumQuantity": "150",
     "availableQuantity": "4100",
-    "price": 15,
-    "_id": 6
+    "price": 15
   }
 ]
