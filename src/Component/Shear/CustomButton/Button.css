@@ -5,4 +5,10 @@
 }
 .custom_btn:hover {
   transform: scale(1.1);
+  background-color: #25b1f7;
+  color: white;
+}
+.custom_btn2 {
+  background-color: #25b1f7;
+  color: white;
 }

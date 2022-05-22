@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import payment from "../../../Assets/Images/payment.png";
 
 const Footer = () => {
   return (
     <div>
       <footer className="text-center bg-gray-900 text-white">
-        <div className="container px-6 pt-6">
+        <div className="container px-6 pt-6 mx-auto">
           <div className="flex justify-center mb-6">
             <a
-              href="#!"
+              href="https://www.facebook.com/DeveloperShahadatHossain/"
               type="button"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
@@ -29,7 +31,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="#!"
+              href="https://twitter.com/wd_shahadat"
               type="button"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
@@ -73,7 +75,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="#!"
+              href="https://www.instagram.com/developershahadat/"
               type="button"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
@@ -95,7 +97,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="#!"
+              href="https://www.linkedin.com/in/developer-sahadat/"
               type="button"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
@@ -117,7 +119,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="#!"
+              href="https://github.com/developer-sahadat"
               type="button"
               className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
             >
@@ -187,132 +189,75 @@ const Footer = () => {
 
           <div className="mb-6">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti dicta,
-              aliquam sequi voluptate quas.
+              I do my best to help you with any questions you may have about
+              us.If you are confused about any of our services, you can share it
+              with us
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 text-left justify-center  ">
             <div className="mb-6">
-              <h5 className="uppercase font-bold mb-2.5">Links</h5>
+              <h5 className="uppercase font-bold mb-2.5">Get to Know Us</h5>
 
               <ul className="list-none mb-0">
                 <li>
-                  <a href="#!" className="text-white">
-                    Link 1
-                  </a>
+                  <Link to="/my-portfolio">My Portfolio</Link>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
-                    Link 2
-                  </a>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
-                    Link 3
-                  </a>
+                  <Link to="/Blogs">Blogs</Link>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
-                    Link 4
-                  </a>
+                  <Link to="/">Services</Link>
                 </li>
               </ul>
             </div>
 
             <div className="mb-6">
-              <h5 className="uppercase font-bold mb-2.5">Links</h5>
+              <h5 className="uppercase font-bold mb-2.5">Services</h5>
 
               <ul className="list-none mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 1
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 3
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 4
-                  </a>
-                </li>
+                <li>Bolster</li>
+                <li>Boning rod</li>
+                <li>Circular saw</li>
+                <li>Bump cutter/screed</li>
               </ul>
             </div>
 
             <div className="mb-6">
-              <h5 className="uppercase font-bold mb-2.5">Links</h5>
+              <h5 className="uppercase font-bold mb-2.5"> Payment Products</h5>
 
               <ul className="list-none mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 1
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 3
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 4
-                  </a>
-                </li>
+                <li>Visa Card</li>
+                <li>Credit transfer</li>
+                <li>Bank transfer</li>
+                <li>SEPA direct debit</li>
               </ul>
             </div>
 
             <div className="mb-6">
-              <h5 className="uppercase font-bold mb-2.5">Links</h5>
+              <h5 className="uppercase font-bold mb-2.5">Contact</h5>
 
               <ul className="list-none mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 1
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 3
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Link 4
-                  </a>
-                </li>
+                <li>Live Chat</li>
+                <li>+8801998839126</li>
+                <li>Live Conversation</li>
+                <li>mdridoysikder862@gmail.com</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div
-          className="text-center p-4"
+          className="text-center p-4 lg:py-4 px-20 lg:flex justify-between items-center "
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          © 2021 Copyright:
-          <a className="text-white" href="https://tailwind-elements.com/">
-            Tailwind Elements
-          </a>
+          <div>© 2022Copyright: Constructions Tool</div>
+          <div>
+            <img className="lg:w-48" src={payment} alt="" />
+          </div>
         </div>
       </footer>
     </div>
