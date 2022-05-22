@@ -1,19 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import google from "../../../Assets/Images/google.png";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithFacebook,
+  useSignInWithGoogle,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../../FirebaseInit/FirebaseInit";
+import LoadingSpinner from "../../Shear/LoadingSpinner";
+import { async } from "@firebase/util";
+import { toast } from "react-toastify";
 
 const SingUp = () => {
+  /** Create User With email password start here **/
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  console.log(user || error);
-  const submitHandler = (event) => {
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  /** Google Sign in code start here **/
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+  /** Facebook Sign in code start here **/
+  const [signInWithFacebook, fUser, fLoading, fError] =
+    useSignInWithFacebook(auth);
+
+  /**  User profile update start here **/
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+  console.log(user || gUser || fUser);
+
+  /** Sign Up loading code start **/
+  if (loading || updating || gLoading || fLoading) {
+    return <LoadingSpinner />;
+  }
+
+  /** Sign Up error code start **/
+  let errorMessage = "";
+  if (error || errorMessage || gError || fError) {
+    errorMessage =
+      error?.message ||
+      updateError?.message ||
+      gError?.message ||
+      fError?.message;
+  }
+
+  const submitHandler = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    toast("Successfully signed up! Check email!");
+    event.target.reset();
   };
 
   return (
@@ -57,7 +96,7 @@ const SingUp = () => {
                     placeholder="Password"
                   />
                 </div>
-
+                <p className="text-center py-2 text-error">{errorMessage}</p>
                 <div className=" mb-6">
                   <span className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out">
                     {" "}
@@ -80,6 +119,7 @@ const SingUp = () => {
               </div>
 
               <button
+                onClick={() => signInWithFacebook()}
                 className="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
                 style={{ backgroundColor: " #3b5998" }}
                 data-mdb-ripple="true"
@@ -97,13 +137,12 @@ const SingUp = () => {
                 </svg>
                 Continue with Facebook
               </button>
-              <a
+              <button
                 className="px-7 py-3  font-medium text-sm leading-snug uppercase rounded border hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
                 style={{ backgroundColor: "white" }}
-                href="#!"
-                role="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
+                onClick={() => signInWithGoogle()}
               >
                 <img
                   src={google}
@@ -111,8 +150,8 @@ const SingUp = () => {
                   style={{ width: "20px" }}
                   alt=""
                 />
-                Continue with Twitter
-              </a>
+                Continue with Google
+              </button>
             </div>
           </div>
         </div>

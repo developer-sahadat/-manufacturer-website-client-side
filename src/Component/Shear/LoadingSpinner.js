@@ -3,7 +3,7 @@ import spinner from "../../Assets/Icons/spinner.gif";
 
 const LoadingSpinner = () => {
   return (
-    <div>
+    <div className="min-w-full  min-h-screen flex justify-center items-center">
       <div>
         <img src={spinner} alt="" />
       </div>
