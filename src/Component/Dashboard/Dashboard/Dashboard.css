@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+.dashboard_container {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}

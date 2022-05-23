@@ -11,6 +11,7 @@ import auth from "../../../FirebaseInit/FirebaseInit";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
+import Header from "../../Shear/Header/Header";
 
 const SingUp = () => {
   /** Create User With email password start here **/
@@ -57,6 +58,7 @@ const SingUp = () => {
 
   return (
     <div>
+      <Header />
       <section className="lg:h-screen lg:w-4/5 mx-auto py-10 lg:py-0">
         <div className="container px-6 py-12 h-full">
           <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">

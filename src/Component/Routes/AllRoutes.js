@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "../../RequireAuth";
+import Analysis from "../Dashboard/Analysis/Analysis";
+import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import Home from "../HomePage/Home/Home";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
@@ -26,6 +28,17 @@ const AllRoutes = () => {
             </RequireAuth>
           }
         />
+
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Analysis />}></Route>
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

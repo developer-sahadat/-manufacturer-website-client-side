@@ -42,6 +42,13 @@ const Header = () => {
           Contact Us
         </NavLink>
       </li>
+      <li>
+        {user && (
+          <NavLink className="link " to="/dashboard">
+            Dashboard
+          </NavLink>
+        )}
+      </li>
 
       {user ? (
         <button

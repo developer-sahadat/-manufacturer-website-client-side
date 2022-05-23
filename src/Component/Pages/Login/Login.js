@@ -9,6 +9,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../FirebaseInit/FirebaseInit";
+import Header from "../../Shear/Header/Header";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
 
 const Login = () => {
@@ -65,6 +66,7 @@ const Login = () => {
 
   return (
     <div>
+      <Header />
       <section className="lg:h-screen lg:w-4/5 mx-auto py-10 lg:py-0">
         <div className="px-6 h-full text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
