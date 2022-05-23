@@ -64,7 +64,7 @@ const Login = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <section className="lg:h-screen lg:w-4/5 mx-auto py-10 lg:py-0">
         <div className="px-6 h-full text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">

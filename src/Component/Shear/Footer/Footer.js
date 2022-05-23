@@ -255,6 +255,7 @@ const Footer = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           <div>© 2022Copyright: Constructions Tool</div>
+
           <div>
             <img className="lg:w-48" src={payment} alt="" />
           </div>
