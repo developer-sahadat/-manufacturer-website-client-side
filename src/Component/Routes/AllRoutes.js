@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "../../RequireAuth";
-import Analysis from "../Dashboard/Analysis/Analysis";
+// import Analysis from "../Dashboard/Analysis/Analysis";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
+import MyOrder from "../Dashboard/UserDashboard/MyOrder";
 import Home from "../HomePage/Home/Home";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
@@ -37,7 +38,8 @@ const AllRoutes = () => {
             </RequireAuth>
           }
         >
-          <Route index element={<Analysis />}></Route>
+          {/* <Route index element={<Analysis />}></Route> */}
+          <Route index element={<MyOrder />}></Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

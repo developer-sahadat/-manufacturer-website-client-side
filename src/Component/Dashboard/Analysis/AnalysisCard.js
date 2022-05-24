@@ -5,7 +5,7 @@ const AnalysisCard = ({ product }) => {
   console.log(arraySine);
   return (
     <div
-      className="rounded-md p-10 cursor-pointer"
+      className="rounded-md lg:w-50 w-30 p-10 cursor-pointer"
       style={{ boxShadow: "0  4px 21px -12px rgb(0, 0, 0, 0.5)" }}
     >
       <h4 className="text-xl font-bold">{name}</h4>
