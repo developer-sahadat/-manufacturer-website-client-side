@@ -1,7 +1,35 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { NavLink, useNavigate } from "react-router-dom";
+import auth from "../../../FirebaseInit/FirebaseInit";
+import LoadingSpinner from "../../Shear/LoadingSpinner";
 
 const DashboardTopBar = () => {
+  let navigate = useNavigate();
+  const [user, loading] = useAuthState(auth);
+
+  const { data, isLoading } = useQuery(["single-user", user], () =>
+    fetch(`http://localhost:5000/single-user?email=${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
+      if (res.status === 401 || res.status === 403) {
+        navigate("/");
+        signOut(auth);
+      }
+
+      return res.json();
+    })
+  );
+
+  if (isLoading || loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className=" sticky top-0 bg-base-100 ">
       <div className="navbar md:w-11/12 mx-auto	">
@@ -61,7 +89,14 @@ const DashboardTopBar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="https://api.lorem.space/image/face?hash=33791" />
+                <img
+                  src={
+                    data?.image
+                      ? data?.image
+                      : "https://i.ibb.co/30DwmWG/Image-Placeholder.png"
+                  }
+                  alt=""
+                />
               </div>
             </label>
           </div>

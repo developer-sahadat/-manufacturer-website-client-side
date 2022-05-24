@@ -34,11 +34,6 @@ const MakeAdmin = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              {/* <th></th>
-              <th>Images</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Make Admin</th> */}
               <th></th>
               <th>Name</th>
               <th>Email</th>
@@ -48,7 +43,12 @@ const MakeAdmin = () => {
           </thead>
           <tbody>
             {data.map((user, index) => (
-              <MakeAdminUser index={index} user={user} key={user?._id} />
+              <MakeAdminUser
+                refetch={refetch}
+                index={index}
+                user={user}
+                key={user?._id}
+              />
             ))}
           </tbody>
         </table>

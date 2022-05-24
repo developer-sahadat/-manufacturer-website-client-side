@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import RequireAdmin from "../../RequireAdmin";
 import RequireAuth from "../../RequireAuth";
 import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
 // import Analysis from "../Dashboard/Analysis/Analysis";
@@ -45,7 +46,14 @@ const AllRoutes = () => {
 
           {/**Admin Route **/}
           {/* <Route index element={<Analysis />}></Route> */}
-          <Route path="make-admin" element={<MakeAdmin />} />
+          <Route
+            path="make-admin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin />
+              </RequireAdmin>
+            }
+          />
         </Route>
         {/**dashboard nested Route code end  **/}
 
