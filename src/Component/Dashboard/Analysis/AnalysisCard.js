@@ -2,7 +2,7 @@ import React from "react";
 
 const AnalysisCard = ({ product }) => {
   const { name, amount, month, arraySine } = product;
-  console.log(arraySine);
+
   return (
     <div
       className="rounded-md lg:w-50 w-30 p-10 cursor-pointer"
@@ -13,7 +13,7 @@ const AnalysisCard = ({ product }) => {
         <span className="font-bold text-xl  mr-2">${amount}</span>{" "}
         <span className="text-sm font-bold">
           -10.5
-          <i class={` text-sm text-primary ml-2 ${arraySine}`}></i>
+          <i className={` text-sm text-primary ml-2 ${arraySine}`}></i>
         </span>
       </div>
       <p className="mt-1 font-medium">{month}</p>

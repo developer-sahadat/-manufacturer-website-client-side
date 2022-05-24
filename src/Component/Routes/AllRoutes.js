@@ -38,8 +38,11 @@ const AllRoutes = () => {
             </RequireAuth>
           }
         >
+          {/**User Route **/}
+          <Route path="my-orders" element={<MyOrder />}></Route>
+
+          {/**Admin Route **/}
           {/* <Route index element={<Analysis />}></Route> */}
-          <Route index element={<MyOrder />}></Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

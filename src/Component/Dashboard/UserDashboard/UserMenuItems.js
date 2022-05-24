@@ -16,14 +16,14 @@ const UserMenuItems = () => {
 
           <NavLink to="/dashboard">
             <li className="mt-1">
-              <i class="fa-solid fa-user mr-2"></i>
+              <i className="fa-solid fa-user mr-2"></i>
               Profile
             </li>
           </NavLink>
 
           <li className="mt-1">
             <NavLink to="/">
-              <i class="fa-solid fa-gear mr-2"></i>
+              <i className="fa-solid fa-gear mr-2"></i>
               Setting
             </NavLink>
           </li>
@@ -32,7 +32,7 @@ const UserMenuItems = () => {
       <div className="mt-4">
         <h3 className="text-xl font-medium">Order Details</h3>
         <ul className="slider_list">
-          <NavLink to="my-order">
+          <NavLink to="/dashboard/my-orders">
             <li>
               <i className="fa-solid fa-house-chimney mr-2"></i>
               My Order

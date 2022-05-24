@@ -7,8 +7,8 @@ import Header from "../../Shear/Header/Header";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
 
 const Purchase = () => {
-  const [increaseDecrease, setIncreaseDecrease] = useState(1);
-  const [data, setData] = useState(1);
+  const [increaseDecrease, setIncreaseDecrease] = useState(0);
+  const [data, setData] = useState({});
 
   const { id } = useParams();
   const [user, loading] = useAuthState(auth);
@@ -30,6 +30,7 @@ const Purchase = () => {
     event.preventDefault();
     const productName = event.target.productName.value;
     const name = event.target.name.value;
+    const price = event.target.price.value;
     const email = event.target.email.value;
     const number = event.target.number.value;
     const address = event.target.address.value;
@@ -42,6 +43,7 @@ const Purchase = () => {
         email,
         number,
         address,
+        price,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -57,7 +59,7 @@ const Purchase = () => {
   };
 
   const increaseHandler = (availableQuantity) => {
-    if (increaseDecrease <= availableQuantity) {
+    if (parseInt(increaseDecrease) <= availableQuantity) {
       setIncreaseDecrease(parseInt(increaseDecrease) + 1);
     } else {
       // setDecreaseDisabled(!disabledIncrease);
@@ -94,6 +96,16 @@ const Purchase = () => {
                 className="input input-bordered input-info mb-3 w-full"
                 required
                 name="productName"
+              />
+              <input
+                value={data?.price}
+                readOnly
+                disabled
+                type="text"
+                placeholder="Type price"
+                className="input input-bordered input-info mb-3 w-full"
+                required
+                name="price"
               />
               <input
                 type="text"
