@@ -1,18 +1,15 @@
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../FirebaseInit/FirebaseInit";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
-import Order from "./Order";
+import MakeAdminUser from "./Analysis/MakeAdminUser";
 
-const MyOrder = () => {
-  const [user, loading] = useAuthState(auth);
+const MakeAdmin = () => {
   let navigate = useNavigate();
 
-  const { data, isLoading, refetch } = useQuery(["my-order", user], () =>
-    fetch(`http://localhost:5000/my-order?email=${user?.email}`, {
+  const { data, isLoading, refetch } = useQuery(["user"], () =>
+    fetch(`http://localhost:5000/user`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -27,7 +24,7 @@ const MyOrder = () => {
     })
   );
 
-  if (loading || isLoading) {
+  if (isLoading) {
     return <LoadingSpinner />;
   }
 
@@ -37,22 +34,21 @@ const MyOrder = () => {
         <table className="table w-full">
           <thead>
             <tr>
+              {/* <th></th>
+              <th>Images</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Make Admin</th> */}
               <th></th>
               <th>Name</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Delete</th>
-              <th>Payment</th>
+              <th>Email</th>
+
+              <th>Make Admin</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((service, index) => (
-              <Order
-                refetch={refetch}
-                service={service}
-                index={index}
-                key={service._id}
-              />
+            {data.map((user, index) => (
+              <MakeAdminUser index={index} user={user} key={user?._id} />
             ))}
           </tbody>
         </table>
@@ -61,4 +57,4 @@ const MyOrder = () => {
   );
 };
 
-export default MyOrder;
+export default MakeAdmin;

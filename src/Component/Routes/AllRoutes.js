@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "../../RequireAuth";
+import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
 // import Analysis from "../Dashboard/Analysis/Analysis";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
@@ -30,6 +31,7 @@ const AllRoutes = () => {
           }
         />
 
+        {/**dashboard nested Route code start  **/}
         <Route
           path="/dashboard"
           element={
@@ -43,7 +45,10 @@ const AllRoutes = () => {
 
           {/**Admin Route **/}
           {/* <Route index element={<Analysis />}></Route> */}
+          <Route path="make-admin" element={<MakeAdmin />} />
         </Route>
+        {/**dashboard nested Route code end  **/}
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

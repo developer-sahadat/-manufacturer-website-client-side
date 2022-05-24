@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import google from "../../../Assets/Images/google.png";
 import {
   useCreateUserWithEmailAndPassword,
@@ -12,8 +12,10 @@ import LoadingSpinner from "../../Shear/LoadingSpinner";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 import Header from "../../Shear/Header/Header";
+import useToken from "../../../Hook/useToken";
 
 const SingUp = () => {
+  let navigate = useNavigate();
   /** Create User With email password start here **/
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -27,8 +29,12 @@ const SingUp = () => {
 
   /**  User profile update start here **/
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-  console.log(user || gUser || fUser);
+  const [token] = useToken(user || gUser || fUser);
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token, user, gUser, fUser, navigate]);
 
   /** Sign Up loading code start **/
   if (loading || updating || gLoading || fLoading) {

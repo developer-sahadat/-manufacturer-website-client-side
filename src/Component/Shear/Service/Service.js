@@ -12,6 +12,7 @@ const Service = ({ service }) => {
     availableQuantity,
     _id,
   } = service;
+
   return (
     <div className="w-72 lg:w-80 mx-auto cursor-pointer service_container text-center md:text-left">
       <div>

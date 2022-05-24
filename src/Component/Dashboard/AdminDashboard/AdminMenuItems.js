@@ -25,40 +25,33 @@ const AdminMenuItems = () => {
               Sales
             </NavLink>
           </li>
-        </ul>
-      </div>
-      <div className="mt-4">
-        <h3 className="text-xl font-medium">Dashboard</h3>
-        <ul className="slider_list">
-          <li>
-            <i className="fa-solid fa-house-chimney mr-2"></i>
-            Home
+          <li className="mt-1">
+            <NavLink to="/">
+              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
+              Add A Product
+            </NavLink>
           </li>
           <li className="mt-1">
-            <i className="fa-solid fa-chart-simple mr-2"></i>
-            Analysis
-          </li>
-          <li className="mt-1">
-            <i className="fa-solid fa-arrow-trend-up mr-2"></i>
-            Sales
+            <NavLink to="/">
+              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
+              Manage Products
+            </NavLink>
           </li>
         </ul>
       </div>
       <div className="mt-4">
-        <h3 className="text-xl font-medium">Dashboard</h3>
+        <h3 className="text-xl font-medium">Settings</h3>
         <ul className="slider_list">
           <li>
             <i className="fa-solid fa-house-chimney mr-2"></i>
-            Home
+            My Profile
           </li>
-          <li className="mt-1">
-            <i className="fa-solid fa-chart-simple mr-2"></i>
-            Analysis
-          </li>
-          <li className="mt-1">
-            <i className="fa-solid fa-arrow-trend-up mr-2"></i>
-            Sales
-          </li>
+          <NavLink to="/dashboard/make-admin">
+            <li className="mt-1">
+              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
+              Make Admin
+            </li>
+          </NavLink>
         </ul>
       </div>
     </div>

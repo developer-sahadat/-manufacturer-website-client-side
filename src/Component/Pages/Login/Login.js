@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -9,6 +9,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../FirebaseInit/FirebaseInit";
+import useToken from "../../../Hook/useToken";
 import Header from "../../Shear/Header/Header";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
 
@@ -34,10 +35,12 @@ const Login = () => {
   /** Facebook Sign in code start here **/
   const [signInWithFacebook, fUser, fLoading, fError] =
     useSignInWithFacebook(auth);
-
-  if (user || gUser || fUser) {
-    navigate(from, { replace: true });
-  }
+  const [token] = useToken(user || gUser || fUser);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, user, gUser, fUser, navigate, from]);
 
   /** Sign Up loading code start **/
   if (loading || sending || gLoading || fLoading) {

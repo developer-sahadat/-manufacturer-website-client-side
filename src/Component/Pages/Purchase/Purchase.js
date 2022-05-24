@@ -149,7 +149,7 @@ const Purchase = () => {
             <h1 className=" py-5 text-2xl  font-bold">Product Information</h1>
             <div>
               <div className="grid justify-center mx-2 items-center  border-b-2 grid-cols-3">
-                <div class="w-24 rounded-xl">
+                <div className="w-24 rounded-xl">
                   <img src={data?.image} alt="" />
                 </div>
                 <h5 className="font-bold text-left">{data?.name}</h5>
@@ -173,7 +173,7 @@ const Purchase = () => {
                     className="w-10  text-white btn-primary "
                     onClick={() => decreaseHandler(data?.minimumQuantity)}
                   >
-                    <i class="fa-solid fa-minus"></i>
+                    <i className="fa-solid fa-minus"></i>
                   </button>
                   <input
                     className="w-10  mx-2 font-bold text-primary  text-center"
@@ -184,7 +184,7 @@ const Purchase = () => {
                     className="w-10 btn-primary text-white "
                     onClick={() => increaseHandler(data?.availableQuantity)}
                   >
-                    <i class="fa-solid fa-plus"></i>
+                    <i className="fa-solid fa-plus"></i>
                   </button>
                 </div>
               </div>
