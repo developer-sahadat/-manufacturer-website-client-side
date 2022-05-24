@@ -2,9 +2,10 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAdmin from "../../RequireAdmin";
 import RequireAuth from "../../RequireAuth";
+import Analysis from "../Dashboard/AdminDashboard/Analysis/Analysis";
 import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
-// import Analysis from "../Dashboard/Analysis/Analysis";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
+import ProfileDashboard from "../Dashboard/ProfileDashboard/ProfileDashboard";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
 import Home from "../HomePage/Home/Home";
 import About from "../Pages/About/About";
@@ -41,11 +42,20 @@ const AllRoutes = () => {
             </RequireAuth>
           }
         >
+          <Route index element={<ProfileDashboard />} />
           {/**User Route **/}
           <Route path="my-orders" element={<MyOrder />}></Route>
 
           {/**Admin Route **/}
-          {/* <Route index element={<Analysis />}></Route> */}
+          <Route
+            path="analysis"
+            element={
+              <RequireAdmin>
+                <Analysis />
+              </RequireAdmin>
+            }
+          ></Route>
+
           <Route
             path="make-admin"
             element={

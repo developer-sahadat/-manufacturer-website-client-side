@@ -14,7 +14,7 @@ const AdminMenuItems = () => {
             </NavLink>
           </li>
           <li className="mt-1">
-            <NavLink to="/dashboard">
+            <NavLink to="/dashboard/analysis">
               <i className="fa-solid fa-chart-simple mr-2"></i>
               Analysis
             </NavLink>
