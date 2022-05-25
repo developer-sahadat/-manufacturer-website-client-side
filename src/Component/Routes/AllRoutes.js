@@ -4,6 +4,7 @@ import RequireAdmin from "../../RequireAdmin";
 import RequireAuth from "../../RequireAuth";
 import Analysis from "../Dashboard/AdminDashboard/Analysis/Analysis";
 import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
+import ManageProducts from "../Dashboard/AdminDashboard/ManageProducts";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import ProfileDashboard from "../Dashboard/ProfileDashboard/ProfileDashboard";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
@@ -61,6 +62,14 @@ const AllRoutes = () => {
             element={
               <RequireAdmin>
                 <MakeAdmin />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manage-products"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
               </RequireAdmin>
             }
           />

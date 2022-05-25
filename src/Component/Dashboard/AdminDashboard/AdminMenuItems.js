@@ -22,34 +22,36 @@ const AdminMenuItems = () => {
           <li className="mt-1">
             <NavLink to="/">
               <i className="fa-solid fa-arrow-trend-up mr-2"></i>
-              Sales
+              All Orders
             </NavLink>
           </li>
           <li className="mt-1">
             <NavLink to="/">
-              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
+              <i class="fa-solid fa-circle-plus mr-2"></i>
               Add A Product
             </NavLink>
           </li>
-          <li className="mt-1">
-            <NavLink to="/">
-              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
+
+          <NavLink to="/dashboard/manage-products">
+            <li className="mt-1">
+              <i class="fa-solid fa-people-roof mr-2"></i>
               Manage Products
-            </NavLink>
-          </li>
+            </li>
+          </NavLink>
         </ul>
       </div>
       <div className="mt-4">
         <h3 className="text-xl font-medium">Settings</h3>
         <ul className="slider_list">
-          <li>
-            <i className="fa-solid fa-house-chimney mr-2"></i>
-            My Profile
-          </li>
+          <NavLink to="/dashboard">
+            <li>
+              <i className="fa-solid fa-house-chimney mr-2"></i>
+              My Profile
+            </li>
+          </NavLink>
           <NavLink to="/dashboard/make-admin">
             <li className="mt-1">
-              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
-              Make Admin
+              <i class="fa-solid fa-dice-d6 mr-2"></i> Make Admin
             </li>
           </NavLink>
         </ul>

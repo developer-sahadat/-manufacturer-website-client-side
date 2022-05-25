@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import LoadingSpinner from "../../Shear/LoadingSpinner";
 import ProfileUpdateModal from "../../Shear/Modal/ProfileUpdateModal/ProfileUpdateModal";
 
 const ProfileDashboard = () => {
+  const [updateProfile, setUpdateProfile] = useState(null);
   let navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
@@ -36,8 +37,8 @@ const ProfileDashboard = () => {
         My Profile
       </h2>
       <div className="py-10 px-10 ">
-        <div class="avatar online">
-          <div class="w-24 rounded-full">
+        <div className="avatar online">
+          <div className="w-24 rounded-full">
             <img
               src={
                 data?.image
@@ -104,13 +105,20 @@ const ProfileDashboard = () => {
       </div>
       <div className="text-center mb-10 cursor-pointer">
         <label
-          for="profile-update-modal"
-          class="text-center font-bold cursor-pointer border border-primary px-10 py-3 custom_btn "
+          onClick={() => setUpdateProfile(data)}
+          htmlFor="profile-update-modal"
+          className="text-center font-bold cursor-pointer border border-primary px-10 py-3 custom_btn "
         >
-          Update Information
+          Update Profile
         </label>
       </div>
-      <ProfileUpdateModal user={data} refetch={refetch} />
+      {updateProfile && (
+        <ProfileUpdateModal
+          setUpdateProfile={setUpdateProfile}
+          user={data}
+          refetch={refetch}
+        />
+      )}
     </section>
   );
 };

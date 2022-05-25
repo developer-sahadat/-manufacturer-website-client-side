@@ -35,9 +35,9 @@ const MakeAdminUser = ({ user, index, refetch }) => {
         <th>{index + 1}</th>
 
         <td>
-          <div class="flex items-center space-x-3">
-            <div class="avatar">
-              <div class="mask mask-squircle w-12 h-12">
+          <div className="flex items-center space-x-3">
+            <div className="avatar">
+              <div className="mask mask-squircle w-12 h-12">
                 <img
                   src={
                     image
@@ -49,7 +49,7 @@ const MakeAdminUser = ({ user, index, refetch }) => {
               </div>
             </div>
             <div>
-              <div class="font-bold">{name}</div>
+              <div className="font-bold">{name}</div>
             </div>
           </div>
         </td>
@@ -61,7 +61,7 @@ const MakeAdminUser = ({ user, index, refetch }) => {
           ) : (
             <button
               onClick={() => makeAdmin()}
-              class="btn btn-primary text-gray-100 btn-xs"
+              className="btn btn-primary text-gray-100 btn-xs"
             >
               Make Admin
             </button>
