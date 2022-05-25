@@ -1,9 +1,45 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const imageStorageKey = `c57edde5c6208c27a5d91c5e10163c0f`;
+  const onSubmit = (data) => {
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          fetch("http://localhost:5000/services", {
+            method: "POST",
+            body: JSON.stringify({
+              image: result?.data?.url,
+              name: data?.name,
+              price: data?.price,
+              minimumQuantity: data?.minimumQuantity,
+              availableQuantity: data?.availableQuantity,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+          })
+            .then((response) => response.json())
+            .then((json) => {
+              if (json.acknowledged) {
+                toast("The product has been added correctly");
+              }
+            });
+        }
+      });
+  };
   return (
     <section className="lg:pl-10 pt-10">
       <div className="shadow-lg bg-gray-100 rounded-lg  w-full lg:w-10/12 p-5 md:px-10 ">
