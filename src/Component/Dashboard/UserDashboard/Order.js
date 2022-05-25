@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import DeleteConfirmModal from "../../Shear/Modal/DeleteConfirmModal/DeleteConfirmModal";
 
 const Order = ({ service, index, refetch }) => {
   const [orderDeleting, setOrderDeleting] = useState(null);
 
-  const { productName, price, name } = service;
+  const { productName, price, name, paid, _id, transaction } = service;
   return (
     <>
       <tr>
@@ -14,6 +15,7 @@ const Order = ({ service, index, refetch }) => {
         <td>${price} </td>
         <td>
           <label
+            disabled={transaction}
             onClick={() => setOrderDeleting(service)}
             htmlFor="delete-confirm-modal"
             className="btn btn-xs btn-error text-white"
@@ -22,10 +24,22 @@ const Order = ({ service, index, refetch }) => {
           </label>
         </td>
         <td>
-          <button className="btn btn-xs btn-primary text-white  ">
-            Pay <i className="fa-solid fa-file-invoice-dollar ml-1"></i>
-          </button>
+          {paid ? (
+            <button
+              disabled={transaction}
+              className="btn btn-xs btn-primary text-white  "
+            >
+              Paid <i className="fa-solid fa-file-invoice-dollar ml-1"></i>
+            </button>
+          ) : (
+            <Link to={`/dashboard/payment/${_id}`}>
+              <button className="btn btn-xs btn-primary text-white  ">
+                Pay <i className="fa-solid fa-file-invoice-dollar ml-1"></i>
+              </button>
+            </Link>
+          )}
         </td>
+        <td>{transaction ? transaction : "Please Pay"}</td>
       </tr>
       {orderDeleting && (
         <DeleteConfirmModal refetch={refetch} service={service} />

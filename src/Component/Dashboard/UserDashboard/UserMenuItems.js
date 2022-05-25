@@ -44,12 +44,6 @@ const UserMenuItems = () => {
               Add Feedback
             </li>
           </NavLink>
-          <NavLink to="user-analytics">
-            <li className="mt-1">
-              <i className="fa-solid fa-arrow-trend-up mr-2"></i>
-              Analytics
-            </li>
-          </NavLink>
         </ul>
       </div>
     </div>

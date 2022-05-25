@@ -14,6 +14,7 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import Login from "../Pages/Login/Login";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
+import Payment from "../Pages/Payment/Payment";
 import Purchase from "../Pages/Purchase/Purchase";
 import SingUp from "../Pages/SingUp/SingUp";
 
@@ -45,6 +46,7 @@ const AllRoutes = () => {
           }
         >
           <Route index element={<ProfileDashboard />} />
+          <Route path="payment/:paymentId" element={<Payment />} />
           {/**User Route **/}
           <Route path="my-orders" element={<MyOrder />}></Route>
 

@@ -7,30 +7,33 @@ const AdminMenuItems = () => {
       <div>
         <h3 className="text-xl font-medium mt-6">Dashboard</h3>
         <ul className="slider_list">
-          <li>
-            <NavLink to="/">
+          <NavLink to="/">
+            <li>
               <i className="fa-solid fa-house-chimney mr-2"></i>
               Home
-            </NavLink>
-          </li>
-          <li className="mt-1">
-            <NavLink to="/dashboard/analysis">
+            </li>
+          </NavLink>
+
+          <NavLink to="/dashboard/analysis">
+            <li className="mt-1">
               <i className="fa-solid fa-chart-simple mr-2"></i>
               Analysis
-            </NavLink>
-          </li>
-          <li className="mt-1">
-            <NavLink to="/">
+            </li>
+          </NavLink>
+
+          <NavLink to="/">
+            <li className="mt-1">
               <i className="fa-solid fa-arrow-trend-up mr-2"></i>
               All Orders
-            </NavLink>
-          </li>
-          <li className="mt-1">
-            <NavLink to="/dashboard/add-product">
+            </li>
+          </NavLink>
+
+          <NavLink to="/dashboard/add-product">
+            <li className="mt-1">
               <i class="fa-solid fa-circle-plus mr-2"></i>
               Add A Product
-            </NavLink>
-          </li>
+            </li>
+          </NavLink>
 
           <NavLink to="/dashboard/manage-products">
             <li className="mt-1">

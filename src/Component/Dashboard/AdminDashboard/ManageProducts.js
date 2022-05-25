@@ -1,14 +1,36 @@
-import React from "react";
-
-import useServices from "../../../Hook/useServices";
+import { signOut } from "firebase/auth";
+import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
+import auth from "../../../FirebaseInit/FirebaseInit";
+import LoadingSpinner from "../../Shear/LoadingSpinner";
+import ManageProduct from "./ManageProduct";
 
 const ManageProducts = () => {
-  const [services] = useServices();
-  console.log(services);
+  let navigate = useNavigate();
+
+  const { data, isLoading, refetch } = useQuery(["services"], () =>
+    fetch(`http://localhost:5000/services`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => {
+      if (res.status === 401 || res.status === 403) {
+        navigate("/");
+        signOut(auth);
+      }
+
+      return res.json();
+    })
+  );
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div>
-      <div class="overflow-x-auto w-full">
+      <div class="overflow-x-auto z-0 w-full">
         <table class="table w-full">
           <thead>
             <tr>
@@ -20,24 +42,12 @@ const ManageProducts = () => {
             </tr>
           </thead>
           <tbody>
-            {services.map((service, index) => (
-              <tr key={service?._id}>
-                <th>{index + 1}</th>
-                <td>
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <img src={service?.image} alt="" />
-                    </div>
-                  </div>
-                </td>
-                <td>{service?.name}</td>
-
-                <th>
-                  <button class="btn  btn-error font-bold btn-xs">
-                    Delete
-                  </button>
-                </th>
-              </tr>
+            {data.map((service, index) => (
+              <ManageProduct
+                service={service}
+                index={index}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>

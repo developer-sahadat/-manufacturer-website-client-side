@@ -31,7 +31,7 @@ const DashboardTopBar = () => {
   }
 
   return (
-    <div className=" sticky top-0 bg-base-100 ">
+    <div className=" sticky top-0 bg-base-100 z-50 ">
       <div className="navbar md:w-11/12 mx-auto	">
         <div className="flex-1">
           <NavLink
