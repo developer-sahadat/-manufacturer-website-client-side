@@ -1,0 +1,10 @@
+.our-customer-item {
+  background: #333333;
+  border: 0.8rem solid white;
+  border-radius: 10px;
+  box-shadow: 7px 10px 5px rgb(231, 231, 231), -3px -7px 10px rgb(230, 230, 230);
+}
+
+.customer-img {
+  margin-top: -10rem;
+}

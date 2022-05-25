@@ -8,6 +8,7 @@ import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
 import ManageProducts from "../Dashboard/AdminDashboard/ManageProducts";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import ProfileDashboard from "../Dashboard/ProfileDashboard/ProfileDashboard";
+import AddReview from "../Dashboard/UserDashboard/AddReview";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
 import Home from "../HomePage/Home/Home";
 import About from "../Pages/About/About";
@@ -46,9 +47,10 @@ const AllRoutes = () => {
           }
         >
           <Route index element={<ProfileDashboard />} />
-          <Route path="payment/:paymentId" element={<Payment />} />
           {/**User Route **/}
           <Route path="my-orders" element={<MyOrder />}></Route>
+          <Route path="payment/:paymentId" element={<Payment />} />
+          <Route path="review" element={<AddReview />} />
 
           {/**Admin Route **/}
           <Route

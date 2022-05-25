@@ -22,7 +22,7 @@ const UserMenuItems = () => {
           </NavLink>
 
           <li className="mt-1">
-            <NavLink to="/">
+            <NavLink to="/dashboard">
               <i className="fa-solid fa-gear mr-2"></i>
               Setting
             </NavLink>
@@ -38,7 +38,7 @@ const UserMenuItems = () => {
               My Order
             </li>
           </NavLink>
-          <NavLink to="feedback">
+          <NavLink to="/dashboard/review">
             <li className="mt-1">
               <i className="fa-solid fa-chart-simple mr-2"></i>
               Add Feedback
