@@ -1,0 +1,68 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+
+const AddProduct = () => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+  return (
+    <section className="lg:pl-10 pt-10">
+      <div className="shadow-lg bg-gray-100 rounded-lg  w-full lg:w-10/12 p-5 md:px-10 ">
+        <h2 className=" pb-10 pt-10 text-xl lg:text-2xl text-secondary font-bold">
+          Add Product
+        </h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-3 ">
+            <input
+              required
+              className="input input-bordered input-info mb-2 w-full max-w-xs"
+              placeholder="Title"
+              {...register("name")}
+            />
+            <input
+              className="input md:ml-4 mb-2 input-bordered input-info w-full max-w-xs"
+              placeholder="Price"
+              {...register("price")}
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              className="input mb-2  cursor-pointer input-bordered input-info p-2 w-full max-w-xs"
+              placeholder="image"
+              type="file"
+              {...register("image")}
+              required
+            />
+            <input
+              className="input mb-2  md:ml-4 input-bordered input-info w-full max-w-xs"
+              placeholder="Minimum Quantity"
+              {...register("minimumQuantity")}
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              className="input mb-2  input-bordered input-info w-full max-w-xs"
+              placeholder="Available Quantity"
+              required
+              {...register("availableQuantity")}
+            />
+          </div>
+
+          <textarea
+            {...register("availableQuantity")}
+            placeholder="description"
+            class="textarea mb-2  textarea-info w-full max-w-xs"
+          ></textarea>
+
+          <div className="mt-5">
+            <input
+              className="text-center font-bold cursor-pointer border border-primary px-10 py-3 custom_btn "
+              type="submit"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default AddProduct;

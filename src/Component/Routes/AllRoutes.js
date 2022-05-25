@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAdmin from "../../RequireAdmin";
 import RequireAuth from "../../RequireAuth";
+import AddProduct from "../Dashboard/AdminDashboard/AddProduct";
 import Analysis from "../Dashboard/AdminDashboard/Analysis/Analysis";
 import MakeAdmin from "../Dashboard/AdminDashboard/MakeAdmin";
 import ManageProducts from "../Dashboard/AdminDashboard/ManageProducts";
@@ -70,6 +71,14 @@ const AllRoutes = () => {
             element={
               <RequireAdmin>
                 <ManageProducts />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="add-product"
+            element={
+              <RequireAdmin>
+                <AddProduct />
               </RequireAdmin>
             }
           />

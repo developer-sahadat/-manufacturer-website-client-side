@@ -26,7 +26,7 @@ const AdminMenuItems = () => {
             </NavLink>
           </li>
           <li className="mt-1">
-            <NavLink to="/">
+            <NavLink to="/dashboard/add-product">
               <i class="fa-solid fa-circle-plus mr-2"></i>
               Add A Product
             </NavLink>
