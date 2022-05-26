@@ -9,7 +9,7 @@ const useToken = (user) => {
 
     const correctUser = { email: email, name: name, image: image };
     if (email) {
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(` https://fathomless-temple-10901.herokuapp.com/user/${email}`, {
         method: "PUT",
         body: JSON.stringify(correctUser),
         headers: {

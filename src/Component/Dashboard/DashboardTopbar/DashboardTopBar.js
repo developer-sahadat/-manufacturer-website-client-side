@@ -11,12 +11,15 @@ const DashboardTopBar = () => {
   const [user, loading] = useAuthState(auth);
 
   const { data, isLoading } = useQuery(["single-user", user], () =>
-    fetch(`http://localhost:5000/single-user?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      ` https://fathomless-temple-10901.herokuapp.com/single-user?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       if (res.status === 401 || res.status === 403) {
         navigate("/");
         signOut(auth);
@@ -31,7 +34,7 @@ const DashboardTopBar = () => {
   }
 
   return (
-    <div className=" sticky top-0 bg-base-100 z-50 ">
+    <div className=" sticky shadow-sm top-0 bg-base-100 z-50 ">
       <div className="navbar md:w-11/12 mx-auto	">
         <div className="flex-1">
           <NavLink

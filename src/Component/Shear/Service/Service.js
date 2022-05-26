@@ -19,11 +19,9 @@ const Service = ({ service }) => {
         <img src={image} alt="" />
       </div>
       <div className="text-service ">
-        <h2 className="mt-5 text-xl font-bold mb-3">{name}</h2>
+        <h2 className="mt-5 text-xl font-bold mb-3 service-title">{name}</h2>
         <p className="text-sm text-gray-400">{description}</p>
-        <h4 className="mt-3 text-primary font-medium text-xl">
-          Per Unit Price ${price}
-        </h4>
+        <h4 className="mt-3 font-bold text-xl">Per Unit Price ${price}</h4>
         <h6 className="mt-4 text-md font-medium  ">
           Available Quantity: {availableQuantity}
         </h6>

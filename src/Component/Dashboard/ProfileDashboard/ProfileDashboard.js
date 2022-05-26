@@ -13,12 +13,15 @@ const ProfileDashboard = () => {
   const [user, loading] = useAuthState(auth);
 
   const { data, isLoading, refetch } = useQuery(["single-user", user], () =>
-    fetch(`http://localhost:5000/single-user?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      ` https://fathomless-temple-10901.herokuapp.com/single-user?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       if (res.status === 401 || res.status === 403) {
         navigate("/");
         signOut(auth);

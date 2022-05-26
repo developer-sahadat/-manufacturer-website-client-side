@@ -12,12 +12,15 @@ const MyOrder = () => {
   let navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery(["my-order", user], () =>
-    fetch(`http://localhost:5000/my-order?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      ` https://fathomless-temple-10901.herokuapp.com/my-order?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       if (res.status === 401 || res.status === 403) {
         navigate("/");
         signOut(auth);

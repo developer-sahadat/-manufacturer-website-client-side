@@ -1,15 +1,14 @@
 import { signOut } from "firebase/auth";
+import React from "react";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../FirebaseInit/FirebaseInit";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
-import MakeAdminUser from "./Analysis/MakeAdminUser";
 
-const MakeAdmin = () => {
+const AllOrders = () => {
   let navigate = useNavigate();
-
-  const { data, isLoading, refetch } = useQuery(["user"], () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/user`, {
+  const { data, isLoading } = useQuery("all-order", () =>
+    fetch(` https://fathomless-temple-10901.herokuapp.com/order`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -27,28 +26,32 @@ const MakeAdmin = () => {
   if (isLoading) {
     return <LoadingSpinner />;
   }
-
+  console.log(data);
   return (
-    <div className="z-0">
-      <div className="overflow-x-auto">
-        <table className="table w-full">
+    <div>
+      <div class="overflow-x-auto z-0 w-full">
+        <table class="table w-full">
           <thead>
             <tr>
               <th></th>
+              <th>Product Title</th>
               <th>Name</th>
               <th>Email</th>
-
-              <th>Make Admin</th>
+              <th>Phone Number</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((user, index) => (
-              <MakeAdminUser
-                refetch={refetch}
-                index={index}
-                user={user}
-                key={user?._id}
-              />
+            {data.map((order, index) => (
+              <tr key={order?._id}>
+                <td>{index + 1}</td>
+                <td>{order?.productName}</td>
+
+                <td>{order?.name}</td>
+                <td>{order?.email}</td>
+                <td>{order?.number}</td>
+                <td>{order?.paid ? "Completed" : "Not completed"}</td>
+              </tr>
             ))}
           </tbody>
         </table>
@@ -57,4 +60,4 @@ const MakeAdmin = () => {
   );
 };
 
-export default MakeAdmin;
+export default AllOrders;

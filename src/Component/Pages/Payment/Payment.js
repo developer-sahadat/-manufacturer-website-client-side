@@ -16,12 +16,15 @@ const Payment = () => {
   const { paymentId } = useParams();
   let navigate = useNavigate();
   const { data, isLoading } = useQuery(["my-order", paymentId], () =>
-    fetch(`http://localhost:5000/my-order/${paymentId}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => {
+    fetch(
+      ` https://fathomless-temple-10901.herokuapp.com/my-order/${paymentId}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => {
       if (res.status === 401 || res.status === 403) {
         navigate("/");
         signOut(auth);

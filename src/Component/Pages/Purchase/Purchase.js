@@ -14,7 +14,7 @@ const Purchase = () => {
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(` https://fathomless-temple-10901.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((service) => {
         setData(service);
@@ -35,7 +35,7 @@ const Purchase = () => {
     const number = event.target.number.value;
     const address = event.target.address.value;
 
-    fetch("http://localhost:5000/order", {
+    fetch(" https://fathomless-temple-10901.herokuapp.com/order", {
       method: "POST",
       body: JSON.stringify({
         productName,

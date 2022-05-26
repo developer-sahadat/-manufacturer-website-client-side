@@ -4,6 +4,7 @@ import HomeServices from "../HomeSevices/HomeServices";
 import Headers from "../../Shear/Header/Header";
 import Footer from "../../Shear/Footer/Footer";
 import HomeReview from "../HomeReview/HomeReview";
+import Businesses from "../businesses/Businesses";
 
 const Home = () => {
   return (
@@ -11,7 +12,9 @@ const Home = () => {
       <Headers />
       <BannerSection />
       <HomeServices />
+
       <HomeReview />
+      <Businesses />
       <Footer />
     </>
   );

@@ -13,7 +13,7 @@ const ProfileUpdateModal = ({ user, refetch, setUpdateProfile }) => {
     const email = user?.email;
 
     if (email) {
-      fetch(`http://localhost:5000/profile/${email}`, {
+      fetch(` https://fathomless-temple-10901.herokuapp.com/profile/${email}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {

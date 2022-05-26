@@ -5,7 +5,9 @@ import Review from "./Review";
 
 const HomeReview = () => {
   const { data, isLoading } = useQuery(["review"], () =>
-    fetch(`http://localhost:5000/review`).then((res) => res.json())
+    fetch(` https://fathomless-temple-10901.herokuapp.com/review`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -18,12 +20,9 @@ const HomeReview = () => {
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10 mx-auto text-center pb-10  md:w-11/12">
-        {data
-          .reverse()
-          .slice(0, 4)
-          .map((review) => (
-            <Review key={review._id} review={review} />
-          ))}
+        {data.map((review) => (
+          <Review key={review._id} review={review} />
+        ))}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const ManageProducts = () => {
   let navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery(["services"], () =>
-    fetch(`http://localhost:5000/services`, {
+    fetch(` https://fathomless-temple-10901.herokuapp.com/services`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -44,6 +44,7 @@ const ManageProducts = () => {
           <tbody>
             {data.map((service, index) => (
               <ManageProduct
+                key={service._id}
                 service={service}
                 index={index}
                 refetch={refetch}

@@ -21,7 +21,7 @@ const AdminMenuItems = () => {
             </li>
           </NavLink>
 
-          <NavLink to="/">
+          <NavLink to="/dashboard/all-order">
             <li className="mt-1">
               <i className="fa-solid fa-arrow-trend-up mr-2"></i>
               All Orders

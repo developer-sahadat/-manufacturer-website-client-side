@@ -5,7 +5,7 @@ const ManageProduct = ({ service, index, refetch }) => {
   const [manageProduct, setManageProduct] = useState(null);
   return (
     <>
-      <tr key={service?._id}>
+      <tr>
         <th>{index + 1}</th>
         <td>
           <div class="avatar">

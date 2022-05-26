@@ -2,7 +2,7 @@ const DeleteConfirmModal = ({ service, refetch }) => {
   const { name, _id } = service;
 
   const deleteHandler = (id) => {
-    const url = `http://localhost:5000/my-order/${id}`;
+    const url = ` https://fathomless-temple-10901.herokuapp.com/my-order/${id}`;
     fetch(url, {
       method: "DELETE",
     })

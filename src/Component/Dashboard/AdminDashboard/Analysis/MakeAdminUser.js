@@ -9,12 +9,15 @@ const MakeAdminUser = ({ user, index, refetch }) => {
   let navigate = useNavigate();
 
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      ` https://fathomless-temple-10901.herokuapp.com/user/admin/${email}`,
+      {
+        method: "PUT",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           navigate("/");
