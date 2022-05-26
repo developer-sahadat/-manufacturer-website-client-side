@@ -17,12 +17,12 @@ const Businesses = () => {
       <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 py-20 w-10/12  text-center mx-auto">
         <div>
           <img className="mx-auto" src={shopping} alt="" />
-          <h1 className="text-3xl font-bold mt-4">1000</h1>
+          <h1 className="text-3xl font-bold mt-4">1000M</h1>
           <h4 className="mt-2 text-primary font-bold"> Worldwide Delivery</h4>
         </div>
         <div>
           <img className="mx-auto " src={review} alt="" />
-          <h1 className="text-3xl font-bold mt-4">450</h1>
+          <h1 className="text-3xl font-bold mt-4">450K</h1>
           <h4 className="mt-2 text-primary font-bold">Feedback</h4>
         </div>
         <div>
@@ -32,12 +32,12 @@ const Businesses = () => {
             src={user}
             alt=""
           />
-          <h1 className="text-3xl  font-bold mt-3">635</h1>
+          <h1 className="text-3xl  font-bold mt-3">235K</h1>
           <h4 className="mt-1 text-primary font-bold">Happy Client</h4>
         </div>
         <div>
           <img className="mx-auto" src={message} alt="" />
-          <h1 className="text-3xl  font-bold mt-3">800</h1>
+          <h1 className="text-3xl  font-bold mt-3">100M</h1>
           <h4 className="mt-1 text-primary font-bold">24/7 Help Center</h4>
         </div>
       </div>

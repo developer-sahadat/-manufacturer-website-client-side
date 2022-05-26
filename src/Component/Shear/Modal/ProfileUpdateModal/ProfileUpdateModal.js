@@ -3,33 +3,58 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 const ProfileUpdateModal = ({ user, refetch, setUpdateProfile }) => {
+  const imageStorageKey = `c57edde5c6208c27a5d91c5e10163c0f`;
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
+    const image = data.image[0];
     const email = user?.email;
 
-    if (email) {
-      fetch(` https://fathomless-temple-10901.herokuapp.com/profile/${email}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.acknowledged) {
-            refetch();
-            toast("Thanks for updating the profile correctly");
-            setUpdateProfile(null);
-          }
-        });
-    }
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success && email) {
+          fetch(
+            ` https://fathomless-temple-10901.herokuapp.com/profile/${email}`,
+            {
+              method: "PUT",
+              body: JSON.stringify({
+                image: result.data.image.url,
+                number: data.number,
+                address: data.address,
+                education: data.education,
+                linkedin: data.linkedin,
+                facebook: data.facebook,
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+              },
+            }
+          )
+            .then((res) => res.json())
+            .then((result) => {
+              if (result.acknowledged) {
+                refetch();
+                toast("Thanks for updating the profile correctly");
+                setUpdateProfile(null);
+              }
+            });
+        }
+      });
   };
+
   return (
     <>
       <input
@@ -49,6 +74,13 @@ const ProfileUpdateModal = ({ user, refetch, setUpdateProfile }) => {
           <h3 className="font-bold text-lg">Update Your Profile!</h3>
           <div className="text-center my-5">
             <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                className="input mb-2  cursor-pointer  input-bordered w-ful p-2 w-full "
+                placeholder="image"
+                type="file"
+                {...register("image")}
+                required
+              />
               <input
                 className="input input-bordered w-full "
                 required

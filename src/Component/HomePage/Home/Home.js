@@ -5,6 +5,8 @@ import Headers from "../../Shear/Header/Header";
 import Footer from "../../Shear/Footer/Footer";
 import HomeReview from "../HomeReview/HomeReview";
 import Businesses from "../businesses/Businesses";
+import LatestOffers from "../LatestOffers/LatestOffers";
+import AboutProduct from "../AboutProduct/AboutProduct";
 
 const Home = () => {
   return (
@@ -12,8 +14,9 @@ const Home = () => {
       <Headers />
       <BannerSection />
       <HomeServices />
-
+      <AboutProduct />
       <HomeReview />
+      <LatestOffers />
       <Businesses />
       <Footer />
     </>

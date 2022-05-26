@@ -30,7 +30,7 @@ const ProfileDashboard = () => {
       return res.json();
     })
   );
-
+  console.log(data);
   if (isLoading || loading) {
     return <LoadingSpinner />;
   }
@@ -45,7 +45,7 @@ const ProfileDashboard = () => {
             <img
               src={
                 data?.image
-                  ? data?.image
+                  ? data?.image || data.data.image
                   : "https://i.ibb.co/30DwmWG/Image-Placeholder.png"
               }
               alt=""

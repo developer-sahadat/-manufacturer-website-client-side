@@ -7,6 +7,8 @@ import Header from "../../Shear/Header/Header";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
 
 const Purchase = () => {
+  const [increaseButtonDisabled, setIncreaseButtonDisabled] = useState(false);
+  const [decreaseButtonDisabled, setDecreaseButtonDisabled2] = useState(false);
   const [increaseDecrease, setIncreaseDecrease] = useState(0);
   const [data, setData] = useState({});
 
@@ -61,16 +63,19 @@ const Purchase = () => {
   const increaseHandler = (availableQuantity) => {
     if (parseInt(increaseDecrease) <= availableQuantity) {
       setIncreaseDecrease(parseInt(increaseDecrease) + 1);
+      setDecreaseButtonDisabled2(false);
     } else {
       // setDecreaseDisabled(!disabledIncrease);
       toast.error("Sorry, we don't have that many products right now");
+      setIncreaseButtonDisabled(true);
     }
   };
   const decreaseHandler = (minimumQuantity) => {
     if (minimumQuantity < increaseDecrease) {
+      setIncreaseButtonDisabled(false);
       setIncreaseDecrease(parseInt(increaseDecrease) - 1);
     } else {
-      // setIncreaseDisabled(!disabledDecrease);
+      setDecreaseButtonDisabled2(true);
       toast.error(
         "We do not sell the product of the unfortunate minimum product"
       );
@@ -140,7 +145,6 @@ const Purchase = () => {
               />
 
               <button className="border border-primary px-10 py-2 text-sm md:text-lg  custom_btn custom_btn2 w-full lg:font-medium">
-                {" "}
                 Complete The Purchase
               </button>
             </form>
@@ -170,6 +174,7 @@ const Purchase = () => {
                 </h6>
                 <div className="mt-10 overflow-hidden border border-gray-200 text-center py-1  w-40   ">
                   <button
+                    disabled={decreaseButtonDisabled}
                     className="w-10  text-white btn-primary "
                     onClick={() => decreaseHandler(data?.minimumQuantity)}
                   >
@@ -181,6 +186,7 @@ const Purchase = () => {
                     value={increaseDecrease}
                   />
                   <button
+                    disabled={increaseButtonDisabled}
                     className="w-10 btn-primary text-white "
                     onClick={() => increaseHandler(data?.availableQuantity)}
                   >
