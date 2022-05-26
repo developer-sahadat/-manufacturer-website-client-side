@@ -12,9 +12,10 @@ import ProfileDashboard from "../Dashboard/ProfileDashboard/ProfileDashboard";
 import AddReview from "../Dashboard/UserDashboard/AddReview";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
 import Home from "../HomePage/Home/Home";
-import About from "../Pages/About/About";
-import Contact from "../Pages/Contact/Contact";
+import Blogs from "../Pages/Blogs/Blogs";
+
 import Login from "../Pages/Login/Login";
+import MyPortfolio from "../Pages/MyPortfolio/MyPortfolio";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Payment from "../Pages/Payment/Payment";
 import Purchase from "../Pages/Purchase/Purchase";
@@ -25,10 +26,11 @@ const AllRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about" element={<Contact />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SingUp />} />
+        <Route path="/my-portfolio" element={<MyPortfolio />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route
           path="/purchase/:id"
           element={

@@ -6,7 +6,7 @@ const LatestOffers = () => {
   const [offers, setOffers] = useState([]);
   console.log(offers);
   useEffect(() => {
-    fetch("LatestOffers.json")
+    fetch("https://fathomless-temple-10901.herokuapp.com/offer")
       .then((res) => res.json())
       .then((data) => setOffers(data));
   }, []);
