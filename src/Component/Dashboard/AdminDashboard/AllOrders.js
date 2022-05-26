@@ -4,10 +4,11 @@ import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../FirebaseInit/FirebaseInit";
 import LoadingSpinner from "../../Shear/LoadingSpinner";
+import AllOrder from "./AllOrder";
 
 const AllOrders = () => {
   let navigate = useNavigate();
-  const { data, isLoading } = useQuery("all-order", () =>
+  const { data, isLoading, refetch } = useQuery("all-order", () =>
     fetch(` https://fathomless-temple-10901.herokuapp.com/order`, {
       method: "GET",
       headers: {
@@ -43,15 +44,12 @@ const AllOrders = () => {
           </thead>
           <tbody>
             {data.map((order, index) => (
-              <tr key={order?._id}>
-                <td>{index + 1}</td>
-                <td>{order?.productName}</td>
-
-                <td>{order?.name}</td>
-                <td>{order?.email}</td>
-                <td>{order?.number}</td>
-                <td>{order?.paid ? "Completed" : "Not completed"}</td>
-              </tr>
+              <AllOrder
+                refetch={refetch}
+                order={order}
+                index={index}
+                key={order?._id}
+              />
             ))}
           </tbody>
         </table>
