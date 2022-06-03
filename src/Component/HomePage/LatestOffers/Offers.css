@@ -1,11 +1,8 @@
-.latestOffer {
-  background-color: #e7f7ff;
-}
 .offer {
-  box-shadow: 0 4px 22px -12px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 22px -12px rgba(216, 216, 216, 0.9);
 }
 .global_btn {
-  background-color: #ebf9fd;
+  background-color: #ffdadb;
   padding: 10px 15px;
   border-radius: 50px;
 

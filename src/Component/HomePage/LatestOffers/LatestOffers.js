@@ -12,11 +12,11 @@ const LatestOffers = () => {
   }, []);
   return (
     <section className="">
-      <div className="latestOffer py-20">
-        <h2 className="text-center text-secondary font-bold mb-3 lg:text-3xl">
+      <div className="latestOffer bg-secondary py-20">
+        <h2 className="text-center  text-white font-bold mb-3 lg:text-3xl">
           Exclusive Savings And Helpful Articles
         </h2>
-        <p className=" mx-auto text-center lg:text-md text-gray-600  lg:w-5/12">
+        <p className=" mx-auto text-center lg:text-md text-white lg:w-5/12">
           Join over half a million tools lovers and get our latest deals,
           articles, and resources sent straight to your inbox!
         </p>
@@ -31,7 +31,7 @@ const LatestOffers = () => {
                 aria-describedby="button-addon3"
               />
               <button
-                class="btn inline-block px-6 btn-primary py-2 border-2 border-primary  font-medium text-xs leading-tight uppercase rounded text-white hover:text-secondary hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                class="btn inline-block px-6 btn-primary py-2 border-2 border-primary  font-medium text-xs leading-tight uppercase rounded text-white hover:text-white hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 type="button"
                 id="button-addon3"
               >
