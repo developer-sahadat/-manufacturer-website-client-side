@@ -7,12 +7,14 @@ import HomeReview from "../HomeReview/HomeReview";
 import Businesses from "../businesses/Businesses";
 import LatestOffers from "../LatestOffers/LatestOffers";
 import AboutProduct from "../AboutProduct/AboutProduct";
+import About from "../HomeAbout/About";
 
 const Home = () => {
   return (
     <>
       <Headers />
       <BannerSection />
+      <About />
       <HomeServices />
       <AboutProduct />
       <HomeReview />

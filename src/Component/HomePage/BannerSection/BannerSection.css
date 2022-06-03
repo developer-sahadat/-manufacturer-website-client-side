@@ -24,6 +24,7 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  background-color: #000000;
 }
 
 .swiper-slide img {
@@ -31,10 +32,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.2;
 }
 
 .text {
   position: absolute;
   font-family: "IBM Plex Sans Arabic", sans-serif;
-  background-color: rgb(rgb(0, 0, 0, 0.5));
+  color: white;
+  z-index: 100;
+}
+
+.banner-btn1 {
+  background-color: #ed1c24;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 2px;
+}
+.banner-btn2 {
+  background-color: #040d23;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 2px;
 }
