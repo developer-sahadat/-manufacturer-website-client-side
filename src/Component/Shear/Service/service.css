@@ -7,10 +7,10 @@
   border-radius: 50px;
   box-shadow: 2px 4px 5px #e5f6ff;
   transition: all 0.5s;
-  background-color: #25b1f7;
+  background-color: #ed1c24;
   color: white;
 }
 
 .service_container:hover .service-title {
-  color: #25b1f7;
+  color: #ed1c24;
 }

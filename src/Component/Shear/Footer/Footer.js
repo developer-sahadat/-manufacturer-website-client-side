@@ -5,7 +5,7 @@ import payment from "../../../Assets/Images/payment.png";
 const Footer = () => {
   return (
     <div>
-      <footer className="text-center bg-gray-900 text-white">
+      <footer className="text-center bg-secondary text-white">
         <div className="container px-6 pt-6 mx-auto">
           <div className="flex justify-center mb-6">
             <a

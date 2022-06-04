@@ -4,7 +4,7 @@ import "./review.css";
 const Review = ({ review }) => {
   const { name, image, description, rating } = review;
   return (
-    <div className=" mx-auto w-80 lg:w-auto">
+    <div className=" our-customer">
       <div class="our-customer-item p-4 text-white  mt-5">
         <div class="avatar customer-img">
           <div class="w-24 rounded-full ring ring-gray-100 shadow-xl ring-offset-base-100 ring-offset-2">
@@ -39,7 +39,7 @@ const Review = ({ review }) => {
             </>
           )}
         </span>
-        <p class="pt-2">{description}</p>
+        <p class="pt-2">{description.slice(0, 80)} ...</p>
       </div>
     </div>
   );

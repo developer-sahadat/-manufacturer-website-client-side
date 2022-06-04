@@ -10,19 +10,19 @@ const Featured = () => {
       <h2 className="text-center text-5xl text-white font-bold mb-10">
         Our Featured
       </h2>
-      <div className="w-11/12 mx-auto grid lg:grid-cols-4 md:grid-cols-2  gap-3">
+      <div className="w-11/12 text-center mx-auto grid lg:grid-cols-4 md:grid-cols-2  gap-3">
         <div>
-          <img src={f1} alt="" />
+          <img className="mx-auto" src={f1} alt="" />
         </div>
         <div>
-          <img src={f2} alt="" />
+          <img className="mx-auto" src={f2} alt="" />
         </div>
         <div>
           {" "}
-          <img src={f3} alt="" />
+          <img className="mx-auto" src={f3} alt="" />
         </div>
         <div>
-          <img src={f4} alt="" />
+          <img className="mx-auto" src={f4} alt="" />
         </div>
       </div>
       <div className="text-center pt-10 pb-5 ">
