@@ -13,12 +13,15 @@ import AddReview from "../Dashboard/UserDashboard/AddReview";
 import MyOrder from "../Dashboard/UserDashboard/MyOrder";
 import Home from "../HomePage/Home/Home";
 import Blogs from "../Pages/Blogs/Blogs";
+import BusinessMember from "../Pages/BusinessMember/BusinessMember";
+import Contact from "../Pages/Contact/Contact";
 
 import Login from "../Pages/Login/Login";
 import MyPortfolio from "../Pages/MyPortfolio/MyPortfolio";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Payment from "../Pages/Payment/Payment";
 import Purchase from "../Pages/Purchase/Purchase";
+import Reviews from "../Pages/Reviews/Reviews";
 import SingUp from "../Pages/SingUp/SingUp";
 
 const AllRoutes = () => {
@@ -30,7 +33,10 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SingUp />} />
         <Route path="/my-portfolio" element={<MyPortfolio />} />
+        <Route path="/business-member" element={<BusinessMember />} />
+        <Route path="/review" element={<Reviews />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/purchase/:id"
           element={

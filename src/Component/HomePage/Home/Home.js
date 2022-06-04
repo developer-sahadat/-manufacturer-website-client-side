@@ -9,6 +9,7 @@ import LatestOffers from "../LatestOffers/LatestOffers";
 import About from "../HomeAbout/About";
 import Featured from "../HomeFeatured/Featured";
 import BrandLogo from "../BrandLogo/BrandLogo";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
 
       <HomeReview />
       <LatestOffers />
+      <Testimonials />
       <Businesses />
       <BrandLogo />
 

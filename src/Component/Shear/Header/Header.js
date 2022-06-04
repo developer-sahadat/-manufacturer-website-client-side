@@ -21,10 +21,20 @@ const Header = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink className="link" to="/business-member">
+          Business Member
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="link" to="/review">
+          Review
+        </NavLink>
+      </li>
 
       <li>
-        <NavLink className="link" to="/my-portfolio">
-          My Portfolio
+        <NavLink className="link" to="/contact">
+          Contact
         </NavLink>
       </li>
       <li>
@@ -62,8 +72,8 @@ const Header = () => {
     <div>
       <div className="navbar  lg:px-10">
         <div className="navbar-start">
-          <Link className="btn btn-ghost normal-case text-xl" to="\">
-            Construction Tools
+          <Link className="btn btn-ghost normal-case font-bold text-xl" to="\">
+            Construction <span className="text-primary">Tools</span>
           </Link>
           <div className="dropdown dropdown-end">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">

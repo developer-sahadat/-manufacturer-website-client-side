@@ -4,7 +4,7 @@ import "./review.css";
 const Review = ({ review }) => {
   const { name, image, description, rating } = review;
   return (
-    <div className=" our-customer">
+    <div className=" our-customer mx-auto">
       <div class="our-customer-item p-4 text-white  mt-5">
         <div class="avatar customer-img">
           <div class="w-24 rounded-full ring ring-gray-100 shadow-xl ring-offset-base-100 ring-offset-2">

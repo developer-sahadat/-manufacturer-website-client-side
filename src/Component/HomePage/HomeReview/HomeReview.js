@@ -15,7 +15,7 @@ const HomeReview = () => {
   }
   return (
     <div>
-      <h2 className="text-secondary text-2xl md:text-4xl font-semibold text-center py-10">
+      <h2 className="text-secondary text-2xl md:text-4xl font-bold text-center py-10">
         Our Customer Reviews
       </h2>
 
