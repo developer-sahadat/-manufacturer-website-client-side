@@ -9,7 +9,7 @@ const useToken = (user) => {
 
     const correctUser = { email: email, name: name, image: image };
     if (email) {
-      fetch(` https://fathomless-temple-10901.herokuapp.com/user/${email}`, {
+      fetch(`https://construction-tools.onrender.com/user/${email}`, {
         method: "PUT",
         body: JSON.stringify(correctUser),
         headers: {

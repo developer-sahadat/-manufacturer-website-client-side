@@ -4,7 +4,7 @@ const AllOrder = ({ order, refetch, index }) => {
   const { name, email, number, paid, _id, productName, shipped } = order;
 
   const pendingHandler = (id) => {
-    fetch(` https://fathomless-temple-10901.herokuapp.com/order/${id}`, {
+    fetch(`https://construction-tools.onrender.com/order/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         shipped: true,

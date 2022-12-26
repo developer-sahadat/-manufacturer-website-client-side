@@ -5,7 +5,7 @@ import Service from "../../Shear/Service/Service";
 const HomeServices = () => {
   const [services] = useServices();
   return (
-    <div className="md:w-11/12  mx-auto py-20 ">
+    <div className="max-w-[1200px]  mx-auto py-20 ">
       <h1 className="text-center text-secondary mb-7 font-bold md:text-4xl">
         Our Best Construction Tools
       </h1>

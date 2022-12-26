@@ -9,7 +9,7 @@ import AllOrder from "./AllOrder";
 const AllOrders = () => {
   let navigate = useNavigate();
   const { data, isLoading, refetch } = useQuery("all-order", () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/order`, {
+    fetch(`https://construction-tools.onrender.com/order`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -16,7 +16,7 @@ const Purchase = () => {
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(` https://fathomless-temple-10901.herokuapp.com/services/${id}`)
+    fetch(`https://construction-tools.onrender.com/services/${id}`)
       .then((res) => res.json())
       .then((service) => {
         setData(service);
@@ -37,7 +37,7 @@ const Purchase = () => {
     const number = event.target.number.value;
     const address = event.target.address.value;
 
-    fetch(" https://fathomless-temple-10901.herokuapp.com/order", {
+    fetch("https://construction-tools.onrender.com/order", {
       method: "POST",
       body: JSON.stringify({
         productName,

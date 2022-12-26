@@ -9,7 +9,7 @@ const ManageProducts = () => {
   let navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery(["services"], () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/services`, {
+    fetch(`https://construction-tools.onrender.com/services`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

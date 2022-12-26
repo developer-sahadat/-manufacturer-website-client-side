@@ -5,7 +5,7 @@ import Review from "./Review";
 
 const HomeReview = () => {
   const { data, isLoading } = useQuery(["review"], () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/review`).then((res) =>
+    fetch(`https://construction-tools.onrender.com/review`).then((res) =>
       res.json()
     )
   );
@@ -14,19 +14,26 @@ const HomeReview = () => {
     return <LoadingSpinner />;
   }
   return (
-    <div>
-      <h2 className="text-secondary text-2xl md:text-4xl font-bold text-center py-10">
-        Our Customer Reviews
-      </h2>
+    <div className="max-w-[1200px] mx-auto py-10">
+      <section class="mb-20 text-gray-700">
+        <div class="text-center md:max-w-xl lg:max-w-3xl mx-auto">
+          <h3 class="text-3xl font-bold mb-6 text-gray-800">Testimonials</h3>
+          <p class="mb-6 pb-2 md:mb-12 md:pb-0">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+            error amet numquam iure provident voluptate esse quasi, veritatis
+            totam voluptas nostrum quisquam eum porro a pariatur veniam.
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10 mx-auto text-center pb-10  md:w-11/12">
-        {[...data]
-          .reverse()
-          .slice(0, 4)
-          .map((review) => (
-            <Review key={review._id} review={review} />
-          ))}
-      </div>
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-12 text-center">
+          {[...data]
+            ?.reverse()
+            ?.slice(0, 3)
+            ?.map((review) => (
+              <Review key={review._id} review={review} />
+            ))}
+        </div>
+      </section>
     </div>
   );
 };

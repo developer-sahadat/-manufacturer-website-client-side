@@ -17,7 +17,7 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
-          fetch(" https://fathomless-temple-10901.herokuapp.com/services", {
+          fetch("https://construction-tools.onrender.com/services", {
             method: "POST",
             body: JSON.stringify({
               image: result?.data?.url,

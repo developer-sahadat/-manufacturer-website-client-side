@@ -7,7 +7,7 @@ import Footer from "../../Shear/Footer/Footer";
 
 const Reviews = () => {
   const { data, isLoading } = useQuery(["review"], () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/review`).then((res) =>
+    fetch(`https://construction-tools.onrender.com/review`).then((res) =>
       res.json()
     )
   );

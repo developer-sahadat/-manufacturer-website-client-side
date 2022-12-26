@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   let navigate = useNavigate();
 
   const { data, isLoading, refetch } = useQuery(["user"], () =>
-    fetch(` https://fathomless-temple-10901.herokuapp.com/user`, {
+    fetch(`https://construction-tools.onrender.com/user`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

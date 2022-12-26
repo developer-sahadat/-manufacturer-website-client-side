@@ -13,7 +13,7 @@ const MyOrder = () => {
 
   const { data, isLoading, refetch } = useQuery(["my-order", user], () =>
     fetch(
-      ` https://fathomless-temple-10901.herokuapp.com/my-order?email=${user?.email}`,
+      `https://construction-tools.onrender.com/my-order?email=${user?.email}`,
       {
         method: "GET",
         headers: {

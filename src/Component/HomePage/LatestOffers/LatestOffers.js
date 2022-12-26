@@ -6,7 +6,7 @@ const LatestOffers = () => {
   const [offers, setOffers] = useState([]);
   console.log(offers);
   useEffect(() => {
-    fetch("https://fathomless-temple-10901.herokuapp.com/offer")
+    fetch("https://construction-tools.onrender.com/offer")
       .then((res) => res.json())
       .then((data) => setOffers(data));
   }, []);
@@ -31,7 +31,7 @@ const LatestOffers = () => {
                 aria-describedby="button-addon3"
               />
               <button
-                class="btn inline-block px-6 btn-primary py-2 border-2 border-primary  font-medium text-xs leading-tight uppercase rounded text-white hover:text-white hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                class="btn inline-block px-6 bg-blue-600 py-2 border-2 border-blue-600  font-medium text-xs leading-tight uppercase rounded text-white hover:text-white hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                 type="button"
                 id="button-addon3"
               >

@@ -14,7 +14,7 @@ const ProfileDashboard = () => {
 
   const { data, isLoading, refetch } = useQuery(["single-user", user], () =>
     fetch(
-      ` https://fathomless-temple-10901.herokuapp.com/single-user?email=${user?.email}`,
+      `https://construction-tools.onrender.com/single-user?email=${user?.email}`,
       {
         method: "GET",
         headers: {

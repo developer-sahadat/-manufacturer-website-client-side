@@ -26,23 +26,20 @@ const ProfileUpdateModal = ({ user, refetch, setUpdateProfile }) => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success && email) {
-          fetch(
-            ` https://fathomless-temple-10901.herokuapp.com/profile/${email}`,
-            {
-              method: "PUT",
-              body: JSON.stringify({
-                image: result.data.image.url,
-                number: data.number,
-                address: data.address,
-                education: data.education,
-                linkedin: data.linkedin,
-                facebook: data.facebook,
-              }),
-              headers: {
-                "Content-type": "application/json; charset=UTF-8",
-              },
-            }
-          )
+          fetch(`https://construction-tools.onrender.com/profile/${email}`, {
+            method: "PUT",
+            body: JSON.stringify({
+              image: result.data.image.url,
+              number: data.number,
+              address: data.address,
+              education: data.education,
+              linkedin: data.linkedin,
+              facebook: data.facebook,
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          })
             .then((res) => res.json())
             .then((result) => {
               if (result.acknowledged) {

@@ -5,7 +5,7 @@ const UseAdmin = (user) => {
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     const email = user?.email;
-    fetch(` https://fathomless-temple-10901.herokuapp.com/admin/${email}`, {
+    fetch(`https://construction-tools.onrender.com/admin/${email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

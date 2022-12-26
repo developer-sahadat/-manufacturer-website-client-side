@@ -18,7 +18,7 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
-          fetch(" https://fathomless-temple-10901.herokuapp.com/review", {
+          fetch("https://construction-tools.onrender.com/review", {
             method: "POST",
             body: JSON.stringify({
               image: result?.data?.url,

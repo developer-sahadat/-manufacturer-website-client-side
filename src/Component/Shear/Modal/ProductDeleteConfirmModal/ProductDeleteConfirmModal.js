@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductDeleteConfirmModal = ({ refetch, service, setManageProduct }) => {
   const deleteHandler = (id) => {
-    const url = ` https://fathomless-temple-10901.herokuapp.com/services/${id}`;
+    const url = `https://construction-tools.onrender.com/services/${id}`;
     fetch(url, {
       method: "DELETE",
     })

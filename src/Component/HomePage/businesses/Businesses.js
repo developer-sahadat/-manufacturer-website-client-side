@@ -4,7 +4,7 @@ import "./businesses.css";
 const Businesses = () => {
   return (
     <section>
-      <div className="bg-primary">
+      <div className=" bg-blue-600">
         <div className="  text-center   w-11/12 mx-auto py-10 lg:flex justify-center items-center">
           <h2 className="text-4xl font-bold text-white">
             All of Our Customers Trust Their Success To Us
@@ -17,7 +17,7 @@ const Businesses = () => {
         </div>
       </div>
       <div className="bg-secondary">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 justify-center items-center w-11/12 mx-auto py-20">
+        <div className="grid max-w-[1200px] mx-auto md:grid-cols-2 lg:grid-cols-4 gap-5 justify-center items-center w-11/12 mx-auto py-20">
           <div class="flex justify-center items-center">
             <div class="stats-icon mr-4">
               <i class="fa-solid fa-thumbs-up text-4xl text-primary"></i>

@@ -12,14 +12,11 @@ const CheckoutForm = ({ data }) => {
   const { price, name, email, _id } = data;
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch(
-      " https://fathomless-temple-10901.herokuapp.com/create-payment-intent",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ price: price }),
-      }
-    )
+    fetch("https://construction-tools.onrender.com/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ price: price }),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.clientSecret) {
@@ -66,7 +63,7 @@ const CheckoutForm = ({ data }) => {
       console.log(paymentIntent);
       setTransaction(paymentIntent?.id);
 
-      fetch(` https://fathomless-temple-10901.herokuapp.com/my-order/${_id}`, {
+      fetch(`https://construction-tools.onrender.com/my-order/${_id}`, {
         method: "PUT",
         body: JSON.stringify({
           transaction: paymentIntent?.id,
